@@ -1,0 +1,33 @@
+{
+  "name": "w1kirace",
+  "version": "1.0.0",
+  "description": "wikipedia race game",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "test": "nodemon ./public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/r0wanda/w1kirace.git"
+  },
+  "keywords": [
+    "wiki"
+  ],
+  "author": "Rowan",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/r0wanda/w1kirace/issues"
+  },
+  "homepage": "https://github.com/r0wanda/w1kirace#readme",
+  "dependencies": {
+    "firebase": "^11.0.2",
+    "ky": "^1.7.2",
+    "peerjs": "^1.5.4"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "nodemon": "^3.1.7"
+  }
+}

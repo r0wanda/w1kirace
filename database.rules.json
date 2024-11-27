@@ -1,0 +1,50 @@
+{
+  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
+  "rules": {
+    ".read": "auth != null",
+    "public": {
+    	".read": true,
+      /* 
+       * uid: auth uid
+       * id: peer id
+       */
+      "$uid": {
+        ".read": true,
+        ".write": "$uid === auth.uid || data.child('ts').val()+(1000*60*60*24*7) < now || now+(1000*60*60*24*8) < data.child('ts').val()",
+        ".validate": "newData.hasChildren(['id', 'ts'])",
+        "id": {
+          ".validate": "newData.isString() && newData.val().length < 40"
+        },
+        "name": {
+          ".validate": "newData.isString() && newData.val().length < 20"
+        },
+        "ts": {
+          ".validate": "newData.isNumber()"
+        },
+        "$others": {
+          ".validate": false
+        }
+      }
+    },
+    "private": {
+    	".read": true,
+      "$uid": {
+        ".read": true,
+        ".write": "$uid === auth.uid || data.child('ts').val()+(1000*60*60*24*7) < now || now+(1000*60*60*24*8) < data.child('ts').val()",
+        ".validate": "newData.hasChildren(['id', 'ts'])",
+        "id": {
+          ".validate": "newData.isString() && newData.val().length < 512"
+        },
+        "name": {
+          ".validate": "newData.isString() && newData.val().length < 20"
+        },
+        "ts": {
+          ".validate": "newData.isNumber()"
+        },
+        "$others": {
+          ".validate": false
+        }
+      }
+    }
+  }
+}

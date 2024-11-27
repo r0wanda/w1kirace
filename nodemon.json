@@ -1,0 +1,6 @@
+{
+    "exec": "tsc && http-server",
+    "execArgs": ["-c-1"],
+    "ext": "ts",
+    "ignore": "public/*"
+}
