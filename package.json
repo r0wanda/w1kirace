@@ -5,8 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "tsc",
-    "test": "nodemon ./public"
+    "build": "NODE_OPTIONS=\"--loader ts-node/esm\" gulp; npm run lint",
+    "test": "nodemon ./public",
+    "lint": "cd src && eslint ."
   },
   "repository": {
     "type": "git",
@@ -22,12 +23,49 @@
   },
   "homepage": "https://github.com/r0wanda/w1kirace#readme",
   "dependencies": {
+    "del": "^8.0.0",
     "firebase": "^11.0.2",
     "ky": "^1.7.2",
     "peerjs": "^1.5.4"
   },
   "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-typescript": "^7.26.0",
+    "@eslint/js": "^9.17.0",
+    "@types/babel__preset-env": "^7.9.7",
+    "@types/browserify": "^12.0.40",
+    "@types/core-js": "^2.5.8",
+    "@types/gulp": "^4.0.17",
+    "@types/gulp-babel": "^6.1.33",
+    "@types/gulp-csso": "^4.0.5",
+    "@types/gulp-postcss": "^8.0.6",
+    "@types/gulp-sourcemaps": "^0.0.38",
+    "@types/gulp-terser": "^1.2.6",
+    "@types/through2": "^2.0.41",
+    "@typescript-eslint/eslint-plugin": "^8.18.0",
+    "autoprefixer": "^10.4.20",
+    "babel-minify": "^0.5.2",
+    "babel-plugin-transform-remove-imports": "^1.8.0",
+    "browserify": "^17.0.1",
+    "core-js": "^3.39.0",
+    "eslint": "^9.17.0",
+    "eslint-plugin-editorconfig": "^4.0.3",
+    "gulp": "^5.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-cli": "^3.0.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-postcss": "^10.0.0",
+    "gulp-terser": "^2.1.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
     "http-server": "^14.1.1",
-    "nodemon": "^3.1.7"
+    "nodemon": "^3.1.7",
+    "notifs": "r0wanda/notifs",
+    "postcss": "^8.4.49",
+    "rimraf": "^6.0.1",
+    "through2": "^4.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.0"
   }
 }

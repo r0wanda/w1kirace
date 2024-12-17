@@ -1,0 +1,34 @@
+body {
+    margin: 0px;
+}
+
+iframe#wiki {
+    width: 100vw;
+    border: none;
+    z-index: 1;
+}
+div#cover {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    position: fixed;
+    margin: 0px;
+    align-items: center;
+    justify-content: center;
+    z-index: 80;
+    background-color: white;
+    /*animation: loaded 1s forwards ease-out;*/
+}
+@keyframes loaded {
+    0% {
+        opacity: 1;
+        display: flex;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+noscript {
+    z-index: 99;
+}

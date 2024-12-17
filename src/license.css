@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    color: var(--fg);
+    font-family: "Roboto", serif;
+    --fg-l: Black;
+    --bg-l: Ivory;
+    --border-l: Bisque;
+    --fg-d: White;
+    --bg-d: #1e1e2e;
+    --fg: var(--fg-l);
+    --bg: var(--bg-l);
+}
+
+body {
+    background-color: var(--bg);
+}
+
+label.switch {
+    position: relative;
+    display: inline-block;
+    width: 2%;
+    height: 1.1%;
+}
+
+input.swin {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+span.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+span.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input.swin:checked + span.slider {
+    background-color: #2196F3;
+}
+
+input:focus + span.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + span.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+a#home {
+    display: inline;
+    position: absolute;
+}
+
+h1#title {
+    text-align: center;
+}
+
+img#gpl,
+img#ccbysa,
+img#gfdl {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 6%;
+}
+
+p#cctxt {
+    white-space: pre-wrap;
+}
+
+p.jump {
+    text-align: center;
+}

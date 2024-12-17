@@ -3,4 +3,4 @@ node_modules
 yarn.lock
 public/*.d.ts
 public/*.js
-public/*.js.map
+public/*.css

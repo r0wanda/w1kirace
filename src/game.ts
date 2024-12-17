@@ -1,25 +1,16 @@
-declare const Peer: typeof import('../node_modules/peerjs/dist/types.d.ts').default;
+import { Wiki } from './Wiki.js';
+import { Menu } from './Menu.js';
 
-interface Meta {
-    peerServer?: string;
-    discord: boolean;
-    public: boolean;
-    joining: boolean;
-    id: string;
-}
-class Game extends Peer {
-    constructor() {
-        super();
-    }
-    static meta(): Meta {
-        const url = new URL(window.location.href);
-        let meta: Meta;
-        try {
-            meta = JSON.parse(url.searchParams.get('meta') || '{}');
-        } catch (err) {
-            //redir
-            throw new Error(); // TODO: replace
-        }
-        return meta;
-    }
-}
+let menu: Menu;
+let wiki: Wiki;
+
+console.log('hi')
+
+window.addEventListener('load', () => { void (async () => {
+    console.log(Menu)
+    menu = new Menu();
+    wiki = menu.wiki;
+    wiki.initMsgHandle();
+    console.log(await wiki.search('seattle'));
+    await wiki.loadFrame('Seattle');
+})(); return; });
