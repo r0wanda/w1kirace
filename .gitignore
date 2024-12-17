@@ -4,3 +4,4 @@ yarn.lock
 public/*.d.ts
 public/*.js
 public/*.css
+src/.html
